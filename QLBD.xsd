@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="QLBD">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CAUTHU">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MACT"/>
+                            <xs:element name="HOTEN"/>
+                            <xs:element name="VITRI"/>
+                            <xs:element name="NGAYSINH"/>
+                            <xs:element name="DIACHI"/>
+                            <xs:element name="MACLB"/>
+                            <xs:element name="MAQG"/>
+                            <xs:element name="SO"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="QUOCGIA">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MAQG"/>
+                            <xs:element name="TENQG"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="CAULACBO">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MACLB"/>
+                            <xs:element name="TENCLB"/>
+                            <xs:element name="MASAN"/>
+                            <xs:element name="MATINH"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="TINH">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MATINH"/>
+                            <xs:element name="TENTINH"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="HUANLUYENVIEN">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MAHLV"/>
+                            <xs:element name="TENHLV"/>
+                            <xs:element name="NGAYSINH"/>
+                            <xs:element name="DIACHI"/>
+                            <xs:element name="DIENTHOAI"/>
+                            <xs:element name="MAQG"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SANVD">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MASAN"/>
+                            <xs:element name="TENSAN"/>
+                            <xs:element name="DIACHI"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="HLV_CLB">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MAHLV"/>
+                            <xs:element name="MACLB"/>
+                            <xs:element name="VAITRO"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="TRANDAU">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MATRAN"/>
+                            <xs:element name="NAM"/>
+                            <xs:element name="NGAYTD"/>
+                            <xs:element name="VONG"/>
+                            <xs:element name="MACLB1"/>
+                            <xs:element name="MACLB2"/>
+                            <xs:element name="MASAN"/>
+                            <xs:element name="KETQUA"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="BANGXH">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MACLB"/>
+                            <xs:element name="NAM"/>
+                            <xs:element name="VONG"/>
+                            <xs:element name="SOTRAN"/>
+                            <xs:element name="THANG"/>
+                            <xs:element name="HOA"/>
+                            <xs:element name="THUA"/>
+                            <xs:element name="DIEM"/>
+                            <xs:element name="HIEUSO"/>
+                            <xs:element name="HANG"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="CAUTHU_KEY">
+            <xs:selector xpath="CAUTHU"/>
+            <xs:field xpath="MACT"/>
+        </xs:key>
+        <xs:key name="QUOCGIA_KEY">
+            <xs:selector xpath="QUOCGIA"/>
+            <xs:field xpath="MAQG"/>
+        </xs:key>
+        <xs:key name="CAULACBO_KEY">
+            <xs:selector xpath="CAULACBO"/>
+            <xs:field xpath="MACLB"/>
+        </xs:key>
+        <xs:key name="TINH_KEY">
+            <xs:selector xpath="TINH"/>
+            <xs:field xpath="MATINH"/>
+        </xs:key>
+        <xs:key name="SANVD_KEY">
+            <xs:selector xpath="SANVD"/>
+            <xs:field xpath="MASAN"/>
+        </xs:key>
+        <xs:key name="HUANLUYENVIEN_KEY">
+            <xs:selector xpath="HUANLUYENVIEN"/>
+            <xs:field xpath="MAHLV"/>
+        </xs:key>
+        <xs:key name="HLV_CLB_KEY">
+            <xs:selector xpath="HLV_CLB"/>
+            <xs:field xpath="MAHLV"/>
+        </xs:key>
+        <xs:key name="TRANDAU_KEY">
+            <xs:selector xpath="TRANDAU"/>
+            <xs:field xpath="MATRAN"/>
+        </xs:key>
+        <xs:key name="BANGXH_KEY">
+            <xs:selector xpath="BANGXH"/>
+            <xs:field xpath="MACLB"/>
+            <xs:field xpath="NAM"/>
+            <xs:field xpath="VONG"/>
+        </xs:key>
+    </xs:element>
+</xs:schema>
