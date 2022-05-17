@@ -29,18 +29,18 @@
                 <xs:element name="CAULACBO">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MACLB"/>
-                            <xs:element name="TENCLB"/>
-                            <xs:element name="MASAN"/>
-                            <xs:element name="MATINH"/>
+                            <xs:element name="MACLB" type="xs:string"/>
+                            <xs:element name="TENCLB" type="xs:string"/>
+                            <xs:element name="MASAN" type="xs:string"/>
+                            <xs:element name="MATINH" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="TINH">
+                <xs:element name="TINH" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MATINH"/>
-                            <xs:element name="TENTINH"/>
+                            <xs:element name="MATINH" type="xs:string"/>
+                            <xs:element name="TENTINH" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
