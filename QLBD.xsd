@@ -68,23 +68,23 @@
                 <xs:element name="HLV_CLB">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MAHLV"/>
-                            <xs:element name="MACLB"/>
-                            <xs:element name="VAITRO"/>
+                            <xs:element name="MAHLV" type="xs:string"/>
+                            <xs:element name="MACLB" type="xs:string"/>
+                            <xs:element name="VAITRO" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="TRANDAU">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MATRAN"/>
-                            <xs:element name="NAM"/>
-                            <xs:element name="NGAYTD"/>
-                            <xs:element name="VONG"/>
-                            <xs:element name="MACLB1"/>
-                            <xs:element name="MACLB2"/>
-                            <xs:element name="MASAN"/>
-                            <xs:element name="KETQUA"/>
+                            <xs:element name="MATRAN" type="xs:string"/>
+                            <xs:element name="NAM" type="xs:string"/>
+                            <xs:element name="NGAYTD" type="xs:date"/>
+                            <xs:element name="VONG" type="xs:string"/>
+                            <xs:element name="MACLB1" type="xs:string"/>
+                            <xs:element name="MACLB2" type="xs:string"/>
+                            <xs:element name="MASAN" type="xs:string"/>
+                            <xs:element name="KETQUA" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
