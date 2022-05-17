@@ -47,21 +47,21 @@
                 <xs:element name="HUANLUYENVIEN">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MAHLV"/>
-                            <xs:element name="TENHLV"/>
-                            <xs:element name="NGAYSINH"/>
-                            <xs:element name="DIACHI"/>
-                            <xs:element name="DIENTHOAI"/>
-                            <xs:element name="MAQG"/>
+                            <xs:element name="MAHLV" type="xs:string"/>
+                            <xs:element name="TENHLV" type="xs:string"/>
+                            <xs:element name="NGAYSINH" type="xs:date"/>
+                            <xs:element name="DIACHI" type="xs:string"/>
+                            <xs:element name="DIENTHOAI" type="xs:string"/>
+                            <xs:element name="MAQG" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="SANVD">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MASAN"/>
-                            <xs:element name="TENSAN"/>
-                            <xs:element name="DIACHI"/>
+                            <xs:element name="MASAN" type="xs:string"/>
+                            <xs:element name="TENSAN" type="xs:string"/>
+                            <xs:element name="DIACHI" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
