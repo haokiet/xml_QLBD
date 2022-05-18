@@ -4,25 +4,25 @@
     <xs:element name="QLBD">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="CAUTHU">
+                <xs:element name="CAUTHU" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MACT"/>
-                            <xs:element name="HOTEN"/>
-                            <xs:element name="VITRI"/>
-                            <xs:element name="NGAYSINH"/>
-                            <xs:element name="DIACHI"/>
-                            <xs:element name="MACLB"/>
-                            <xs:element name="MAQG"/>
-                            <xs:element name="SO"/>
+                            <xs:element name="MACT" minOccurs="1" type="xs:string"/>
+                            <xs:element name="HOTEN" minOccurs="1" type="xs:string"/>
+                            <xs:element name="VITRI" minOccurs="1" type="xs:string"/>
+                            <xs:element name="NGAYSINH" type="xs:date"/>
+                            <xs:element name="DIACHI" type="xs:string"/>
+                            <xs:element name="MACLB" minOccurs="1" type="xs:string"/>
+                            <xs:element name="MAQG" minOccurs="1" type="xs:string"/>
+                            <xs:element name="SO" minOccurs="1" type="xs:int"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="QUOCGIA">
+                <xs:element name="QUOCGIA" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MAQG"/>
-                            <xs:element name="TENQG"/>
+                            <xs:element name="MAQG" minOccurs="1" type="xs:string" />
+                            <xs:element name="TENQG" minOccurs="1" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -91,16 +91,16 @@
                 <xs:element name="BANGXH">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MACLB"/>
-                            <xs:element name="NAM"/>
-                            <xs:element name="VONG"/>
-                            <xs:element name="SOTRAN"/>
-                            <xs:element name="THANG"/>
-                            <xs:element name="HOA"/>
-                            <xs:element name="THUA"/>
-                            <xs:element name="DIEM"/>
-                            <xs:element name="HIEUSO"/>
-                            <xs:element name="HANG"/>
+                            <xs:element name="MACLB" minOccurs="1" type="xs:string"/>
+                            <xs:element name="NAM" minOccurs="1" type="xs:int" />
+                            <xs:element name="VONG" minOccurs="1" type="xs:int"/>
+                            <xs:element name="SOTRAN" minOccurs="1" type="xs:int"/>
+                            <xs:element name="THANG" minOccurs="1" type="xs:int"/>
+                            <xs:element name="HOA" minOccurs="1" type="xs:int"/>
+                            <xs:element name="THUA" minOccurs="1" type="xs:int"/>
+                            <xs:element name="DIEM" minOccurs="1" type="xs:int"/>
+                            <xs:element name="HIEUSO" minOccurs="1" type="xs:string"/>
+                            <xs:element name="HANG" minOccurs="1" type="xs:int"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
