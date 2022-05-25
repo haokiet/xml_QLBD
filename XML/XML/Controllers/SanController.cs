@@ -11,13 +11,14 @@ namespace XML.Controllers
     public class SanController : Controller
     {
         XmlDocument doc = new XmlDocument();
-        string file2 = System.IO.Path.GetDirectoryName("XMLFile1.xml");
-        string file = @"C:\Users\trimi\source\repos\XML\XML\DataSource\XMLFile1.xml";
+        string file;
         XmlElement root;
+
+        public string File1 { get => Server.MapPath("/DataSource/XMLFile1.xml"); set => file = value; }
 
         private void initValue()
         {
-            doc.Load(file);
+            doc.Load(File1);
             root = doc.DocumentElement;
         }
         // GET: San
@@ -40,7 +41,6 @@ namespace XML.Controllers
                 temp.DIACHI = SanNode["DIACHI"].InnerText;
                 sans.Add(temp);
             }
-            ViewBag.t = file2;
             return View(sans);
         }
 
@@ -81,7 +81,7 @@ namespace XML.Controllers
 
 
             root.InsertAfter(san, temp);
-            doc.Save(file);
+            doc.Save(File1);
             ViewBag.t = "thanh cong";
             return View();
 
