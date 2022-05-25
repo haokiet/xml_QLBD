@@ -1,0 +1,32 @@
+﻿@model IEnumerable<XML.Models.SAN>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Index</h2>
+@ViewBag.t
+<table border="1">
+    <tr>
+        <th>Mã Sân</th>
+        <th>Tên Sân</th>
+        <th>Địa Chỉ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.MASAN
+            </td>
+            <td>
+                @item.TENSAN
+            </td>
+            <td>
+                @item.DIACHI
+            </td>
+        </tr>
+    }
+
+</table>
+

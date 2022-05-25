@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QLBD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/D:/XML/bt%20nhom/xml_QLBD/QLBD.xsd">
+    <CAUTHU>
+        <MACT>CT1</MACT>
+        <HOTEN>Nguyễn Gì đó</HOTEN>
+        <VITRI>Tien dạo</VITRI>
+        <NGAYSINH>11/02/2001</NGAYSINH>
+        <DIACHI>Nha TRang</DIACHI>
+        <MACLB>CLB1</MACLB>
+        <MAQG>QG1</MAQG>
+        <SO>01</SO>
+    </CAUTHU>
+    <QUOCGIA>
+        <MAQG>QG1</MAQG>
+        <TENQG>Viet Nam</TENQG>
+    </QUOCGIA>
+    <CAULACBO>
+        <MACLB>CLB1</MACLB>
+        <TENCLB>cau lac bo 1</TENCLB>
+        <MASAN>S1</MASAN>
+        <MATINH>T1</MATINH>
+    </CAULACBO>
+    <TINH>
+        <MATINH>T1</MATINH>
+        <TENTINH>Tinh 1</TENTINH>
+    </TINH>
+    <HUANLUYENVIEN>
+        <MAHLV>HLV1</MAHLV>
+        <TENHLV>h l v 1</TENHLV>
+        <NGAYSINH>2001-07-11</NGAYSINH>
+        <DIACHI>nha</DIACHI>
+        <DIENTHOAI>alo</DIENTHOAI>
+        <MAQG>QG1</MAQG>
+    </HUANLUYENVIEN>
+    <SANVD>
+        <MASAN>S1</MASAN>
+        <TENSAN>hoang kim</TENSAN>
+        <DIACHI>nha</DIACHI>
+    </SANVD>
+    <HLV_CLB>
+        <MAHLV>HLV1</MAHLV>
+        <MACLB>CLB1</MACLB>
+        <VAITRO>chiu</VAITRO>
+    </HLV_CLB>
+    <TRANDAU>
+        <MATRAN>m1</MATRAN>
+        <NAM>2000</NAM>
+        <NGAYTD>2000-11-02</NGAYTD>
+        <VONG>1</VONG>
+        <MACLB1>CLB1</MACLB1>
+        <MACLB2>CLB1</MACLB2>
+        <MASAN>S1</MASAN>
+        <KETQUA>2 0</KETQUA>
+    </TRANDAU>
+    <BANGXH>
+        <MACLB>CLB1</MACLB>
+        <NAM>200</NAM>
+        <VONG>1</VONG>
+        <SOTRAN>1</SOTRAN>
+        <THANG>1</THANG>
+        <HOA>0</HOA>
+        <THUA>0</THUA>
+        <DIEM>1</DIEM>
+        <HIEUSO>1</HIEUSO>
+        <HANG>1</HANG>
+    </BANGXH>
+</QLBD>
