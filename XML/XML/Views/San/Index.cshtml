@@ -5,12 +5,15 @@
 
 
 <h2>Index</h2>
-@ViewBag.t
+
+@Html.ActionLink("them", "Create", "San")
+
 <table border="1">
     <tr>
         <th>Mã Sân</th>
         <th>Tên Sân</th>
         <th>Địa Chỉ</th>
+        <th>tinh nag</th>
     </tr>
 
     @foreach (var item in Model)
@@ -24,6 +27,10 @@
             </td>
             <td>
                 @item.DIACHI
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", "San", new { id = item.MASAN }, "")
+                @Html.ActionLink("Xoa", "Delete", "San", new { id = item.MASAN }, "")
             </td>
         </tr>
     }

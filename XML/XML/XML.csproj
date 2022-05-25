@@ -172,6 +172,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\San\Index.cshtml" />
     <Content Include="Views\San\Create.cshtml" />
+    <Content Include="Views\San\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
