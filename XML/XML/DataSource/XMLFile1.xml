@@ -20,6 +20,16 @@
     <MAQG>QG1</MAQG>
     <SO>02</SO>
   </CAUTHU>
+  <CAUTHU>
+    <MACT>CT3</MACT>
+    <HOTEN>Tien dao</HOTEN>
+    <VITRI>Nguyen tien linh</VITRI>
+    <NGAYSINH>11/02/2001</NGAYSINH>
+    <DIACHI>Nha TRang</DIACHI>
+    <MACLB>CLB2</MACLB>
+    <MAQG>QG1</MAQG>
+    <SO>02</SO>
+  </CAUTHU>
   <QUOCGIA>
     <MAQG>QG1</MAQG>
     <TENQG>Viet Nam</TENQG>
@@ -32,7 +42,7 @@
   </CAULACBO>
   <CAULACBO>
     <MACLB>CLB2</MACLB>
-    <TENCLB>cau lac bo 1</TENCLB>
+    <TENCLB>cau lac bo 2</TENCLB>
     <MASAN>S1</MASAN>
     <MATINH>T1</MATINH>
   </CAULACBO>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
+using System.Xml.Linq;
+using System.Xml.XPath;
 using XML.Models;
 
 namespace XML.Controllers
@@ -60,7 +62,23 @@ namespace XML.Controllers
         // GET: CauThu/Create
         public ActionResult Create()
         {
-           // ViewBag.MACLB = new SelectList(root.SelectNodes("//CAULACBO//MACLB"));
+            initValue();
+            XmlNodeList membersIdList = root.SelectNodes("CAULACBO//TENCLB");
+            List<String> DScauThu = new List<String>();
+            foreach(XmlNode A in membersIdList)
+            {
+                String a = A.InnerText;
+                DScauThu.Add(a);
+            }
+            XmlNodeList membersIdList1 = root.SelectNodes("QUOCGIA//TENQG");
+            List<String> DScauThu1 = new List<String>();
+            foreach (XmlNode A in membersIdList1)
+            {
+                String a = A.InnerText;
+                DScauThu1.Add(a);
+            }
+            ViewBag.MACLB = new SelectList(DScauThu);
+            ViewBag.MAQG = new SelectList(DScauThu1);
             return View();
         }
 
