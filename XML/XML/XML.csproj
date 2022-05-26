@@ -125,6 +125,7 @@
     <Compile Include="Controllers\CauThuController.cs" />
     <Compile Include="Controllers\Class1.cs" />
     <Compile Include="Controllers\HuanLuyenVienController.cs" />
+    <Compile Include="Controllers\initValue.cs" />
     <Compile Include="Controllers\QuocGiaController.cs" />
     <Compile Include="Controllers\SanController.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,6 +185,7 @@
     <Content Include="Views\CauThu\Index.cshtml" />
     <Content Include="Views\HuanLuyenVien\Index.cshtml" />
     <Content Include="Views\QuocGia\Index.cshtml" />
+    <Content Include="Views\CauThu\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
