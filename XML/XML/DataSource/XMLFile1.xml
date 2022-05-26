@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<QLBD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<QLBD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QLBD.xsd">
   <CAUTHU>
     <MACT>CT1</MACT>
     <HOTEN>Nguyen tien linh</HOTEN>
     <VITRI>Tien dao</VITRI>
-    <NGAYSINH>11/02/2001</NGAYSINH>
+    <NGAYSINH>2000-11-01</NGAYSINH>
     <DIACHI>Nha TRang</DIACHI>
     <MACLB>CLB1</MACLB>
     <MAQG>QG1</MAQG>
@@ -25,8 +25,8 @@
     <TENTINH>Tinh 1</TENTINH>
   </TINH>
   <HUANLUYENVIEN>
-    <MAHLV>HLV1</MAHLV>
-    <TENHLV>h l v 1</TENHLV>
+    <MAHLV>HLV14</MAHLV>
+    <TENHLV>nguyen ngoc yssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</TENHLV>
     <NGAYSINH>2001-07-11</NGAYSINH>
     <DIACHI>nha</DIACHI>
     <DIENTHOAI>alo</DIENTHOAI>
@@ -38,9 +38,9 @@
     <DIACHI>S1</DIACHI>
   </SANVD>
   <SANVD>
-    <MASAN>S2</MASAN>
-    <TENSAN>hoang kim 2</TENSAN>
-    <DIACHI>nha 22</DIACHI>
+    <MASAN>a</MASAN>
+    <TENSAN>a</TENSAN>
+    <DIACHI>av</DIACHI>
   </SANVD>
   <HLV_CLB>
     <MAHLV>HLV1</MAHLV>

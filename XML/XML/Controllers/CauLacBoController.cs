@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Xml;
 using XML.Models;
+using XML.QLData;
 
 namespace XML.Controllers
 {
@@ -24,20 +25,9 @@ namespace XML.Controllers
         // GET: CauLacBo
         public ActionResult Index()
         {
-            initValue();
+            QLCLB qLCLB = new QLCLB();
 
-            XmlNodeList CLBs = root.SelectNodes("CAULACBO");
-            List<CLB> DSCLB = new List<CLB>();
-
-            foreach (XmlNode CLB in CLBs)
-            {
-                CLB temp = new CLB();
-                temp.MACLB = CLB["MACLB"].InnerText;
-                temp.TENCLB = CLB["TENCLB"].InnerText;
-                DSCLB.Add(temp);
-            }
-
-            return View(DSCLB);
+            return View(qLCLB.getdata());
         }
 
         // GET: CauLacBo/Details/5

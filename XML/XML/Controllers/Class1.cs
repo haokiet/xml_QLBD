@@ -10,10 +10,12 @@ namespace XML.Controllers
         XmlDocument doc = new XmlDocument();
         string file = @"C:\Users\trimi\source\repos\XML\XML\DataSource\XMLFile1.xml";
         XmlElement root;
+        public string File1 { get => HttpContext.Current.Server.MapPath("/DataSource/XMLFile1.xml"); set => file = value; }
         protected Class1()
         {
-            this.doc.Load(file);
-            root = this.doc.DocumentElement;
+
+            doc.Load(file);
+            root = doc.DocumentElement;
         }
 
         public void them()
