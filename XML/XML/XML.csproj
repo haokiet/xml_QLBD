@@ -120,13 +120,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BangXepHangController.cs" />
+    <Compile Include="Controllers\CauLacBoController.cs" />
+    <Compile Include="Controllers\CauThuController.cs" />
     <Compile Include="Controllers\Class1.cs" />
+    <Compile Include="Controllers\HuanLuyenVienController.cs" />
+    <Compile Include="Controllers\QuocGiaController.cs" />
     <Compile Include="Controllers\SanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BANGXH.cs" />
-    <Compile Include="Models\CauThu.cs" />
+    <Compile Include="Models\CAUTHU.cs" />
     <Compile Include="Models\CLB.cs" />
     <Compile Include="Models\HLV.cs" />
     <Compile Include="Models\HLV_CLB.cs" />
@@ -174,6 +179,11 @@
     <Content Include="Views\San\Create.cshtml" />
     <Content Include="Views\San\Edit.cshtml" />
     <Content Include="Views\Shared\_LayoutPage.cshtml" />
+    <Content Include="Views\BangXepHang\Index.cshtml" />
+    <Content Include="Views\CauLacBo\Index.cshtml" />
+    <Content Include="Views\CauThu\Index.cshtml" />
+    <Content Include="Views\HuanLuyenVien\Index.cshtml" />
+    <Content Include="Views\QuocGia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

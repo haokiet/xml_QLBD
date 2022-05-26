@@ -5,7 +5,7 @@ using System.Web;
 
 namespace XML.Models
 {
-    public partial class CauThu
+    public partial class CAUTHU
     {
         public string MACT { get; set; }
         public string HOTEN { get; set; }

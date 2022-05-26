@@ -4,52 +4,25 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Tables / Data - NiceAdmin Bootstrap Template</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+<main id="main" class="main">
+    @ViewBag.t
 
-    <!-- Favicons -->
-    <link href="../../assets/img/favicon.png" rel="icon">
-    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <form action="/San/Create" method="post">
+        Mã Sân
+        <input type="text" name="MASAN" />
+        <br />
+        Tên Sân
+        <input type="text" name="TENSAN" />
+        <br />
+        Địa Chỉ
+        <input type="text" name="DIACHI" />
+        <br />
+        <button type="submit"> gửi </button>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="../../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../../assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="../../assets/css/style.css" rel="stylesheet">
-</head>
-<body>
-    <main id="main" class="main">
-        @ViewBag.t
-
-        <form style="margin-top:100px;" action="/San/Create" method="post">
-
-            <input type="text" name="MASAN" />
-            <input type="text" name="TENSAN" />
-            <input type="text" name="DIACHI" />
-            <button type="submit"> gửi </button>
-
-        </form>
-        <div>
-            @Html.ActionLink("Quay lại", "Index")
-        </div>
-    </main>
-    </body>
-</html>
+    </form>
+    <div>
+        @Html.ActionLink("Quay lại", "Index")
+    </div>
+</main>

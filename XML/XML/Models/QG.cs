@@ -9,14 +9,14 @@ namespace XML.Models
     {
         public QG()
         {
-            this.CauThu = new HashSet<CauThu>();
+            this.CauThu = new HashSet<CAUTHU>();
             this.HLVs = new HashSet<HLV>();
         }
 
         public string MAQG { get; set; }
         public string TENQG { get; set; }
 
-        public virtual ICollection<CauThu> CauThu { get; set; }
+        public virtual ICollection<CAUTHU> CauThu { get; set; }
         public virtual ICollection<HLV> HLVs { get; set; }
     }
 }
