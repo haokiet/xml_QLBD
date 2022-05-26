@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="QLBD">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CAUTHU" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MACT" minOccurs="1" type="xs:string"/>
+                            <xs:element name="HOTEN" minOccurs="1" type="xs:string"/>
+                            <xs:element name="VITRI" minOccurs="1" type="xs:string"/>
+                            <xs:element name="NGAYSINH" type="xs:date"/>
+                            <xs:element name="DIACHI" type="xs:string"/>
+                            <xs:element name="MACLB" minOccurs="1" type="xs:string"/>
+                            <xs:element name="MAQG" minOccurs="1" type="xs:string"/>
+                            <xs:element name="SO" minOccurs="1" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="QUOCGIA" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MAQG" minOccurs="1" type="xs:string"/>
+                            <xs:element name="TENQG" minOccurs="1" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="CAULACBO">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MACLB" type="xs:string"/>
+                            <xs:element name="TENCLB" type="xs:string"/>
+                            <xs:element name="MASAN" type="xs:string"/>
+                            <xs:element name="MATINH" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="TINH" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MATINH" type="xs:string"/>
+                            <xs:element name="TENTINH" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="HUANLUYENVIEN">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MAHLV">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="5"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="TENHLV">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="NGAYSINH" type="xs:date"/>
+                            <xs:element name="DIACHI">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="200"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="DIENTHOAI">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="10"/>
+                                        <xs:maxLength value="12"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="MAQG" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SANVD">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MASAN">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="5"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="TENSAN">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="DIACHI">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="200"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="HLV_CLB">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MAHLV" type="xs:string"/>
+                            <xs:element name="MACLB" type="xs:string"/>
+                            <xs:element name="VAITRO" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="TRANDAU">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MATRAN" type="xs:string"/>
+                            <xs:element name="NAM" type="xs:string"/>
+                            <xs:element name="NGAYTD" type="xs:date"/>
+                            <xs:element name="VONG" type="xs:string"/>
+                            <xs:element name="MACLB1" type="xs:string"/>
+                            <xs:element name="MACLB2" type="xs:string"/>
+                            <xs:element name="MASAN" type="xs:string"/>
+                            <xs:element name="KETQUA" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="BANGXH">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MACLB" minOccurs="1" type="xs:string"/>
+                            <xs:element name="NAM" minOccurs="1" type="xs:int"/>
+                            <xs:element name="VONG" minOccurs="1" type="xs:int"/>
+                            <xs:element name="SOTRAN" minOccurs="1" type="xs:int"/>
+                            <xs:element name="THANG" minOccurs="1" type="xs:int"/>
+                            <xs:element name="HOA" minOccurs="1" type="xs:int"/>
+                            <xs:element name="THUA" minOccurs="1" type="xs:int"/>
+                            <xs:element name="DIEM" minOccurs="1" type="xs:int"/>
+                            <xs:element name="HIEUSO" minOccurs="1" type="xs:string"/>
+                            <xs:element name="HANG" minOccurs="1" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="CAUTHU_KEY">
+            <xs:selector xpath="CAUTHU"/>
+            <xs:field xpath="MACT"/>
+        </xs:key>
+        <xs:key name="QUOCGIA_KEY">
+            <xs:selector xpath="QUOCGIA"/>
+            <xs:field xpath="MAQG"/>
+        </xs:key>
+        <xs:key name="CAULACBO_KEY">
+            <xs:selector xpath="CAULACBO"/>
+            <xs:field xpath="MACLB"/>
+        </xs:key>
+        <xs:key name="TINH_KEY">
+            <xs:selector xpath="TINH"/>
+            <xs:field xpath="MATINH"/>
+        </xs:key>
+        <xs:key name="SANVD_KEY">
+            <xs:selector xpath="SANVD"/>
+            <xs:field xpath="MASAN"/>
+        </xs:key>
+        <xs:key name="HUANLUYENVIEN_KEY">
+            <xs:selector xpath="HUANLUYENVIEN"/>
+            <xs:field xpath="MAHLV"/>
+        </xs:key>
+        <xs:key name="HLV_CLB_KEY">
+            <xs:selector xpath="HLV_CLB"/>
+            <xs:field xpath="MAHLV"/>
+        </xs:key>
+        <xs:key name="TRANDAU_KEY">
+            <xs:selector xpath="TRANDAU"/>
+            <xs:field xpath="MATRAN"/>
+        </xs:key>
+        <xs:key name="BANGXH_KEY">
+            <xs:selector xpath="BANGXH"/>
+            <xs:field xpath="MACLB"/>
+            <xs:field xpath="NAM"/>
+            <xs:field xpath="VONG"/>
+        </xs:key>
+        <xs:keyref name="CAUTHU_REF1" refer="CAULACBO_KEY">
+            <xs:selector xpath="CAUTHU"/>
+            <xs:field xpath="MACT"/>
+        </xs:keyref>
+        <xs:keyref name="CAUTHU_REF2" refer="QUOCGIA_KEY">
+            <xs:selector xpath="QUOCGIA"/>
+            <xs:field xpath="MAQG"/>
+        </xs:keyref>
+        <xs:keyref name="CAULACBO_REF" refer="SANVD_KEY">
+            <xs:selector xpath="SANVD"/>
+            <xs:field xpath="MASAN"/>
+        </xs:keyref>
+        <xs:keyref name="CAULACBO_REF2" refer="TINH_KEY">
+            <xs:selector xpath="TINH"/>
+            <xs:field xpath="MATINH"/>
+        </xs:keyref>
+        <xs:keyref name="HUANLUYENVIEN_REF" refer="QUOCGIA_KEY">
+            <xs:selector xpath="QUOCGIA"/>
+            <xs:field xpath="MAQG"/>
+        </xs:keyref>
+        <xs:keyref name="HLV_CLB_REF1" refer="HUANLUYENVIEN_KEY">
+            <xs:selector xpath="HUANLUYENVIEN"/>
+            <xs:field xpath="MAHLV"/>
+        </xs:keyref>
+        <xs:keyref name="HLV_CLB_REF2" refer="CAULACBO_KEY">
+            <xs:selector xpath="CAULACBO"/>
+            <xs:field xpath="MACLB"/>
+        </xs:keyref>
+        <xs:keyref name="TRANDAU_REF" refer="SANVD_KEY">
+            <xs:selector xpath="SANVD"/>
+            <xs:field xpath="MASAN"/>
+        </xs:keyref>
+        <xs:keyref name="BANGXH_REF" refer="CAULACBO_KEY">
+            <xs:selector xpath="CAULACBO"/>
+            <xs:field xpath="MACLB"/>
+        </xs:keyref>
+        <xs:unique name="TenSanUnique">
+            <xs:selector xpath="SANVD"/>
+            <xs:field xpath="TENSAN"/>
+        </xs:unique>
+    </xs:element>
+</xs:schema>

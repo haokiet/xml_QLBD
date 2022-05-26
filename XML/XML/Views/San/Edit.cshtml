@@ -9,14 +9,15 @@
 <main id="main" class="main">
     <form style="margin-top:100px;" action="/San/Edit" method="post">
 
-        Mã Sân
-        <input type="hidden" name="MASAN" />
+
+        <input type="hidden" name="id" value="@Model.MASAN" />
+        <input type="hidden" name="MASAN" value="@Model.MASAN" />
         <br />
         Tên Sân
-        <input type="text" name="TENSAN" />
+        <input type="text" name="TENSAN" value="@Model.TENSAN" />
         <br />
         Địa Chỉ
-        <input type="text" name="DIACHI" />
+        <input type="text" name="DIACHI" value="@Model.DIACHI" />
         <br />
 
         <button type="submit"> Sửa </button>

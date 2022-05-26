@@ -6,6 +6,8 @@
 }
 
 <main id="main" class="main">
+
+
     <h2 style="text-align: center">@ViewBag.Title</h2>
     <div id="gridContent">
         @ViewBag.TB
@@ -20,6 +22,7 @@
             grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
             grid.Column("MACLB","Mã câu lạc bộ"), //the model fields to display
             grid.Column("TENCLB","Tên câu lạc bộ"  ),
+
             grid.Column("Chức năng", format: @<text>
     <a href="@Url.Action("Edit",
                             new { id = item.MACLB})" class="edit-btn"><abbr title="Cập nhật dữ liệu"><img src="/images/edit.png" width="20" height="20" /></abbr></a>
