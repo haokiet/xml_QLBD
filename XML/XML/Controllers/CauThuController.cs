@@ -41,11 +41,13 @@ namespace XML.Controllers
                     temp.NGAYSINH = cauThu["NGAYSINH"].InnerText;
                     temp.DIACHI = cauThu["DIACHI"].InnerText;
                     temp.SO = cauThu["SO"].InnerText;
-                temp.MACLB = root.SelectNodes
-                    (String.Format("//CAULACBO//MACLB[contains(normalize-space(),{0})]/following-sibling::TENCLB", cauThu["MACLB"].InnerText)).Item(0).InnerText;
-                temp.MAQG = root.SelectNodes
-                    (String.Format("//QUOCGIA//MAQG[contains(normalize-space(),{0})]/following-sibling::TENQG" , cauThu["MAQG"].InnerText)).Item(0).InnerText;
-                    DScauThu.Add(temp);
+                //temp.MACLB = cauThu["MACLB"].InnerText;
+                temp.MACLB = root.SelectSingleNode
+                 (@"//CAULACBO//MACLB[contains(normalize-space()," + "'" + cauThu["MACLB"].InnerText + "'" + ")]//following-sibling::TENCLB//text()").InnerText;
+                 temp.MAQG = root.SelectSingleNode
+                  (@"//QUOCGIA//MAQG[contains(normalize-space()," + "'" + cauThu["MAQG"].InnerText + "'" + ")]//following-sibling::TENQG//text()").InnerText;
+               // temp.MAQG = cauThu["MAQG"].InnerText;
+                DScauThu.Add(temp);
                 
             }
 
@@ -58,27 +60,32 @@ namespace XML.Controllers
             
             return View();
         }
-
+        public String layKhoa(List<String> vs,String Path,String A)
+        {
+            foreach (String s in vs)
+            {
+                String k = root.SelectNodes(Path).Cast<XmlNode>()
+                                .Where(node1 => node1["CAULACBO//TENCLB"].InnerText == A)
+                               .Select(node1 => node1["CAULACBO//MACLB"].InnerText).ToString();
+            }
+            return null;
+        }
         // GET: CauThu/Create
         public ActionResult Create()
         {
             initValue();
-            XmlNodeList membersIdList = root.SelectNodes("CAULACBO//TENCLB");
-            List<String> DScauThu = new List<String>();
-            foreach(XmlNode A in membersIdList)
-            {
-                String a = A.InnerText;
-                DScauThu.Add(a);
-            }
-            XmlNodeList membersIdList1 = root.SelectNodes("QUOCGIA//TENQG");
-            List<String> DScauThu1 = new List<String>();
-            foreach (XmlNode A in membersIdList1)
-            {
-                String a = A.InnerText;
-                DScauThu1.Add(a);
-            }
-            ViewBag.MACLB = new SelectList(DScauThu);
-            ViewBag.MAQG = new SelectList(DScauThu1);
+           
+            List<String> memberNames = root.SelectNodes("CAULACBO//TENCLB").Cast<XmlNode>()
+               
+                               .Select(node1 => node1.InnerText)
+                               .ToList();
+            List<String> memberNames1 = root.SelectNodes("QUOCGIA//TENQG").Cast<XmlNode>()
+                              .Select(node1 => node1.InnerText)
+                              .ToList();
+
+            ViewBag.MACLB = new SelectList(memberNames);
+            
+            ViewBag.MAQG = new SelectList(memberNames1);
             return View();
         }
 
@@ -86,6 +93,7 @@ namespace XML.Controllers
         [HttpPost]
         public ActionResult Create(CAUTHU cauthu)
         {
+            
             try
             {
                 initValue();
@@ -111,12 +119,16 @@ namespace XML.Controllers
                 XmlElement DIACHI = doc.CreateElement("DIACHI");
                 DIACHI.InnerText = cauthu.DIACHI;
                 san.AppendChild(DIACHI);
-
+               
                 XmlElement MACLB = doc.CreateElement("MACLB");
+                cauthu.MACLB = root.SelectSingleNode
+                    (@"//CAULACBO//TENCLB[contains(normalize-space()," + "'" + cauthu.MACLB + "'" + ")]//preceding-sibling::MACLB//text()").InnerText;
                 MACLB.InnerText = cauthu.MACLB;
                 san.AppendChild(MACLB);
-
+                
                 XmlElement MAQG = doc.CreateElement("MAQG");
+                cauthu.MAQG = root.SelectSingleNode
+                    (@"//QUOCGIA//TENQG[contains(normalize-space()," + "'" + cauthu.MAQG + "'" + ")]//preceding-sibling::MAQG//text()").InnerText;
                 MAQG.InnerText = cauthu.MAQG;
                 san.AppendChild(MAQG);
 

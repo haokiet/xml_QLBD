@@ -15,6 +15,6 @@ namespace XML.Models
         public string SO { get; set; }
         public string MAQG { get; set; }
         public string MACLB { get; set; }
-        
+       
     }
 }

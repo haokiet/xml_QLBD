@@ -11,7 +11,7 @@ using System.Runtime;
 
 namespace XML.Controllers
 {
-    public class SanController : Controller
+    public class SanController : Controller 
     {
 
 
