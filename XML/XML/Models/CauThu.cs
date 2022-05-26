@@ -13,8 +13,8 @@ namespace XML.Models
         public string NGAYSINH { get; set; }
         public string DIACHI { get; set; }
         public string SO { get; set; }
-
-        public virtual CLB CLB { get; set; }
-        public virtual QG QG { get; set; }
+        public string MAQG { get; set; }
+        public string MACLB { get; set; }
+        
     }
 }
