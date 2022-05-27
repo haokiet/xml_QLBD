@@ -25,9 +25,9 @@ namespace XML.Controllers
         // GET: CauLacBo
         public ActionResult Index()
         {
-            QLCLB qLCLB = new QLCLB();
 
-            return View(qLCLB.getdata());
+
+            return View();
         }
 
         // GET: CauLacBo/Details/5

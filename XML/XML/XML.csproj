@@ -141,8 +141,8 @@
     <Compile Include="Models\TINH.cs" />
     <Compile Include="Models\TRANDAU.CS" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLData\QLCauThu.cs" />
     <Compile Include="QLData\QLTong.cs" />
-    <Compile Include="QLData\QLCLB.cs" />
     <Compile Include="QLData\QLSan.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +189,7 @@
     <Content Include="Views\HuanLuyenVien\Index.cshtml" />
     <Content Include="Views\QuocGia\Index.cshtml" />
     <Content Include="Views\CauThu\Create.cshtml" />
+    <Content Include="Views\CauThu\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

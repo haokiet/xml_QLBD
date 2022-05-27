@@ -17,16 +17,6 @@
     <NGAYSINH>11/02/2001</NGAYSINH>
     <DIACHI>Nha TRang</DIACHI>
     <MACLB>CLB1</MACLB>
-    <MAQG>QG1</MAQG>
-    <SO>02</SO>
-  </CAUTHU>
-  <CAUTHU>
-    <MACT>CT2</MACT>
-    <HOTEN>Tien dao</HOTEN>
-    <VITRI>Nguyen tien linh</VITRI>
-    <NGAYSINH>11/02/2001</NGAYSINH>
-    <DIACHI>Nha TRang</DIACHI>
-    <MACLB>CLB2</MACLB>
     <MAQG>QG2</MAQG>
     <SO>02</SO>
   </CAUTHU>
@@ -66,11 +56,6 @@
     <MASAN>S1</MASAN>
     <TENSAN>S1</TENSAN>
     <DIACHI>S1</DIACHI>
-  </SANVD>
-  <SANVD>
-    <MASAN>a</MASAN>
-    <TENSAN>a</TENSAN>
-    <DIACHI>av</DIACHI>
   </SANVD>
   <HLV_CLB>
     <MAHLV>HLV1</MAHLV>

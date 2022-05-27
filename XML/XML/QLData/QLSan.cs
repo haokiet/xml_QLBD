@@ -14,21 +14,12 @@ namespace XML.QLData
         protected override XmlElement createrNewEle(SAN t)
         {
 
-            XmlElement san = doc.CreateElement("SANVD");
+            XmlElement temp = doc.CreateElement("SANVD");
 
-            XmlElement MASAN = doc.CreateElement("MASAN");
-            MASAN.InnerText = t.MASAN;
-            san.AppendChild(MASAN);
-
-            XmlElement TENSAN = doc.CreateElement("TENSAN");
-            TENSAN.InnerText = t.TENSAN;
-            san.AppendChild(TENSAN);
-
-            XmlElement DIACHI = doc.CreateElement("DIACHI");
-            DIACHI.InnerText = t.DIACHI;
-            san.AppendChild(DIACHI);
-
-            return san;
+            temp.AppendChild(createrNode<String>("MASAN", t.MASAN));
+            temp.AppendChild(createrNode<String>("TENSAN", t.TENSAN));
+            temp.AppendChild(createrNode<String>("DIACHI", t.DIACHI));
+            return temp;
         }
 
         protected override SAN createrOject(XmlNode item)

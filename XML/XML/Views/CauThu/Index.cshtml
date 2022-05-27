@@ -42,36 +42,37 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                <tr>
-                                    <td>
-                                        @item.MACT
-                                    </td>
-                                    <td>
-                                        @item.HOTEN
-                                    </td>
-                                    <td>
-                                        @item.VITRI
-                                    </td>
-                                    <td>
-                                        @item.NGAYSINH
-                                    </td>
-                                    <td>
-                                        @item.DIACHI
-                                    </td>
-                                    <td>
-                                        @item.MACLB
-                                    </td>
-                                    <td>
-                                        @item.MAQG
-                                    </td>
-                                    <td>
-                                        @item.SO
-                                    </td>
-                                    <td>@Html.ActionLink("Chi tiết", "Detail", "CauThu", new { id = item.MACT }, "") |
-                                        @Html.ActionLink("Sửa", "Edit", "CauThu", new { id = item.MACT }, "") |
-                                        @Html.ActionLink("Xóa", "Delete", "CauThu", new { id = item.MACT }, "")
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>
+                                            @item.MACT
+                                        </td>
+                                        <td>
+                                            @item.HOTEN
+                                        </td>
+                                        <td>
+                                            @item.VITRI
+                                        </td>
+                                        <td>
+                                            @item.NGAYSINH
+                                        </td>
+                                        <td>
+                                            @item.DIACHI
+                                        </td>
+                                        <td>
+                                            @item.MACLB
+                                        </td>
+                                        <td>
+                                            @item.MAQG
+                                        </td>
+                                        <td>
+                                            @item.SO
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Chi tiết", "Detail", "CauThu", new { id = item.MACT }, "") |
+                                            @Html.ActionLink("Sửa", "Edit", "CauThu", new { id = item.MACT }, "") |
+                                            @Html.ActionLink("Xóa", "Delete", "CauThu", new { id = item.MACT }, "")
+                                        </td>
+                                    </tr>
                                 }
                             </tbody>
                         </table>
@@ -82,4 +83,4 @@
         </div>
     </section>
 
-</main><!-- End #main -->
+</main>

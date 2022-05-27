@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 using XML.Models;
+using System.Web.Mvc;
 
 namespace XML.QLData
 {
@@ -33,6 +34,40 @@ namespace XML.QLData
             {
                 DS.Add(createrOject(item));
             }
+        }
+        public XmlElement createrNode<H>(string name, H value)
+        {
+            XmlElement temp = doc.CreateElement(name);
+            temp.InnerText = value.ToString();
+            return temp;
+        }
+        public XmlElement createrNode<H>(string name, H value, string sc)
+        {
+            XmlElement temp = doc.CreateElement(name);
+            temp.InnerText = value.ToString();
+            return temp;
+        }
+        public string keyToAttribute(string table, string nameKeyTable, XmlNode item, string nameAttFind)
+        {
+            return root.SelectSingleNode
+                 (@"//" + table + "//" + nameKeyTable + "[contains(normalize-space()," + "'" +
+                 item[nameKeyTable].InnerText + "'" + ")]//following-sibling::" + nameAttFind + "//text()").InnerText;
+
+        }
+        public string attributeToKey(string table, string nameAttTable, string findValue, string findAtt)
+        {
+            return root.SelectSingleNode
+                    (@"//" + table + "//" + nameAttTable + "[contains(normalize-space()," + "'" + findValue + "'" + ")]//preceding-sibling::" + findAtt + "//text()").InnerText;
+
+        }
+
+        public SelectList getListSelect(string tabble, string nameListGet)
+        {
+            List<String> memberNames = root.SelectNodes(tabble + "//" + nameListGet)
+                                           .Cast<XmlNode>()
+                                           .Select(node1 => node1.InnerText)
+                               .ToList();
+            return new SelectList(memberNames);
         }
 
         public void them(T t)
@@ -93,6 +128,15 @@ namespace XML.QLData
             }
 
             return default(T);
+        }
+        public bool istimkiem(string id)
+        {
+            XmlNode t = root.SelectSingleNode(nameData() + "[" + nameKey() + "='" + id + "']");
+            if (t != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

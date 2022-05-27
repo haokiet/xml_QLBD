@@ -11,11 +11,8 @@ using System.Runtime;
 
 namespace XML.Controllers
 {
-    public class SanController : Controller 
+    public class SanController : Controller
     {
-
-
-
 
         public ActionResult Index()
         {
@@ -28,9 +25,15 @@ namespace XML.Controllers
         }
 
         // GET: San/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            QLTong<SAN> t = new QLSan();
+            if (!t.istimkiem(id))
+            {
+                return HttpNotFound();
+            }
+
+            return View(t.xemChiTiet(id));
         }
 
         // GET: San/Create
@@ -58,17 +61,17 @@ namespace XML.Controllers
         // GET: San/Edit/5
         public ActionResult Edit(string id)
         {
-            QLSan qLSan = new QLSan();
+            QLTong<SAN> t = new QLSan();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            /*if (!qLSan.timKiem(id))
+            if (t.istimkiem(id))
             {
                 return HttpNotFound();
-            }*/
+            }
 
-            return View(qLSan.xemChiTiet(id));
+            return View(t.xemChiTiet(id));
         }
 
         // POST: San/Edit/5
@@ -81,8 +84,6 @@ namespace XML.Controllers
             QLTong<SAN> qLSan = new QLSan();
             qLSan.sua(id, sanSua);
             qLSan.getdata();
-
-
             return View("Index", qLSan.DS);
         }
 
