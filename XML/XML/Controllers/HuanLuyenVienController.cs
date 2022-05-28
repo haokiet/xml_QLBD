@@ -1,67 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
 using XML.Models;
+using XML.QLData;
 
 namespace XML.Controllers
 {
     public class HuanLuyenVienController : Controller
     {
-        XmlDocument doc = new XmlDocument();
-        string file;
-        XmlElement root;
-
-        public string File1 { get => Server.MapPath("/DataSource/XMLFile1.xml"); set => file = value; }
-
-        private void initValue()
-        {
-            doc.Load(File1);
-            root = doc.DocumentElement;
-        }
-        // GET: HuanLuyenVien
+        // GET: QuocGia
         public ActionResult Index()
         {
-            initValue();
 
-            XmlNodeList HLVs = root.SelectNodes("HUANLUYENVIEN");
-            List<HLV> DSHLV = new List<HLV>();
+            QLTong<HLV> qLQG = new QLHLV();
+            qLQG.getdata();
 
-            foreach (XmlNode HLV in HLVs)
-            {
-                HLV temp = new HLV();
-                temp.MAHLV = HLV["MAHLV"].InnerText;
-                temp.TENHLV = HLV["TENHLV"].InnerText;
-                temp.NGAYSINH = HLV["NGAYSINH"].InnerText;
-                temp.DIACHI = HLV["DIACHI"].InnerText;
-                temp.DIENTHOAI = HLV["DIENTHOAI"].InnerText;
-                DSHLV.Add(temp);
-            }
-            return View(DSHLV);
+
+            return View(qLQG.DS);
         }
 
-        // GET: HuanLuyenVien/Details/5
-        public ActionResult Details(int id)
+        // GET: QuocGia/Details/5
+        public ActionResult Details(string id)
         {
-            return View();
+            QLTong<HLV> t = new QLHLV();
+            if (!t.istimkiem(id))
+            {
+                return HttpNotFound();
+            }
+
+            return View(t.xemChiTiet(id));
         }
 
-        // GET: HuanLuyenVien/Create
+        // GET: QuocGia/Create
         public ActionResult Create()
         {
+            QLTong<HLV> t = new QLHLV();
+            ViewBag.MAQG = t.getListSelect("QUOCGIA", "TENQG");
             return View();
         }
 
-        // POST: HuanLuyenVien/Create
+        // POST: QuocGia/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(HLV hLV)
         {
+
             try
             {
-                // TODO: Add insert logic here
-
+                QLTong<HLV> t = new QLHLV();
+                t.them(hLV);
+                t.getdata();
                 return RedirectToAction("Index");
             }
             catch
@@ -70,48 +61,44 @@ namespace XML.Controllers
             }
         }
 
-        // GET: HuanLuyenVien/Edit/5
-        public ActionResult Edit(int id)
+        // GET: QuocGia/Edit/5
+        public ActionResult Edit(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            QLTong<HLV> t = new QLHLV();
+
+            if (!t.istimkiem(id))
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.MAQG = t.getListSelect("QUOCGIA", "TENQG");
+            return View(t.xemChiTiet(id));
         }
 
-        // POST: HuanLuyenVien/Edit/5
+        // POST: QuocGia/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string id, HLV hLV)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            QLTong<HLV> t = new QLHLV();
+            t.sua(id, hLV);
+            t.getdata();
+            return RedirectToAction("Index");
         }
 
-        // GET: HuanLuyenVien/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: HuanLuyenVien/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        // POST: QuocGia/Delete/5
+        [HttpGet]
+        public ActionResult Delete(string id, HLV hLV)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            QLTong<HLV> t = new QLHLV();
+            t.xoa(id);
+            t.getdata();
+            return View("Index", t.DS);
         }
     }
 }

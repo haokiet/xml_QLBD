@@ -21,32 +21,27 @@ namespace XML.QLData
             root = doc.DocumentElement;
         }
 
-        protected abstract string nameData();
-        protected abstract string nameKey();
+        protected abstract string nameTable();
+        protected abstract string namePrimarykey();
         protected abstract T createrOject(XmlNode item);
 
         protected abstract XmlElement createrNewEle(T t);
         public void getdata()
         {
-            XmlNodeList nodeList = root.SelectNodes(nameData());
+            XmlNodeList nodeList = root.SelectNodes(nameTable());
             DS.RemoveRange(0, DS.Count);
             foreach (XmlNode item in nodeList)
             {
                 DS.Add(createrOject(item));
             }
         }
-        public XmlElement createrNode<H>(string name, H value)
+        protected XmlElement createrNode<H>(string name, H value)
         {
             XmlElement temp = doc.CreateElement(name);
             temp.InnerText = value.ToString();
             return temp;
         }
-        public XmlElement createrNode<H>(string name, H value, string sc)
-        {
-            XmlElement temp = doc.CreateElement(name);
-            temp.InnerText = value.ToString();
-            return temp;
-        }
+
         public string keyToAttribute(string table, string nameKeyTable, XmlNode item, string nameAttFind)
         {
             return root.SelectSingleNode
@@ -73,7 +68,7 @@ namespace XML.QLData
         public void them(T t)
         {
 
-            root.InsertAfter(createrNewEle(t), root.SelectSingleNode(nameData() + "[last()]"));
+            root.InsertAfter(createrNewEle(t), root.SelectSingleNode(nameTable() + "[last()]"));
             DS.Add(t);
             doc.Save(file);
         }
@@ -81,47 +76,29 @@ namespace XML.QLData
 
         public void sua(string id, T t)
         {
-            XmlNode nodecu = root.SelectSingleNode(nameData() + "[" + nameKey() + "='" + id + "']");
+            XmlNode nodecu = root.SelectSingleNode(nameTable() + "[" + namePrimarykey() + "='" + id + "']");
             if (nodecu != null)
             {
                 XmlElement temp = createrNewEle(t);
                 root.ReplaceChild(temp, nodecu);
                 doc.Save(file);
-                /* nếu cần xóa lun cái list 
-                 int i = 0;
-                 foreach (var value in DSCLB)
-                 {
-                     if (value.MACLB != id) i++;
-                     else break;
-                 }
-                 DS.RemoveAt(i);
-                 DS.Add(t);*/
             }
 
         }
 
         public void xoa(string id)
         {
-            XmlNode nodecu = root.SelectSingleNode(nameData() + "[" + nameKey() + "='" + id + "']");
+            XmlNode nodecu = root.SelectSingleNode(nameTable() + "[" + namePrimarykey() + "='" + id + "']");
             if (nodecu != null)
             {
                 root.RemoveChild(nodecu);
                 doc.Save(file);
-
-                /* nếu cần xóa lun trên list
-                  int i = 0;
-                foreach (var value in DSCLB)
-                {
-                    if (value.MACLB != id) i++;
-                    else break;
-                }
-                DSCLB.RemoveAt(i);*/
             }
         }
 
         public T xemChiTiet(string id)
         {
-            XmlNode nodecu = root.SelectSingleNode(nameData() + "[" + nameKey() + "='" + id + "']");
+            XmlNode nodecu = root.SelectSingleNode(nameTable() + "[" + namePrimarykey() + "='" + id + "']");
             if (nodecu != null)
             {
                 return createrOject(nodecu);
@@ -131,7 +108,7 @@ namespace XML.QLData
         }
         public bool istimkiem(string id)
         {
-            XmlNode t = root.SelectSingleNode(nameData() + "[" + nameKey() + "='" + id + "']");
+            XmlNode t = root.SelectSingleNode(nameTable() + "[" + namePrimarykey() + "='" + id + "']");
             if (t != null)
             {
                 return true;

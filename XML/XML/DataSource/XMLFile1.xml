@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <QLBD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QLBD.xsd">
+  <HLV>
+    <MAHLV>12</MAHLV>
+    <TENHLV>t</TENHLV>
+    <NGAYSINH>1</NGAYSINH>
+    <DIACHI>2</DIACHI>
+    <DIENTHOAI>09090</DIENTHOAI>
+    <MAQG>QG2</MAQG>
+  </HLV>
   <CAUTHU>
     <MACT>CT1</MACT>
     <HOTEN>Nguyen tien linh</HOTEN>
@@ -22,7 +30,7 @@
   </CAUTHU>
   <QUOCGIA>
     <MAQG>QG1</MAQG>
-    <TENQG>Viet Nam</TENQG>
+    <TENQG>Viet Na</TENQG>
   </QUOCGIA>
   <QUOCGIA>
     <MAQG>QG2</MAQG>
@@ -44,18 +52,23 @@
     <MATINH>T1</MATINH>
     <TENTINH>Tinh 1</TENTINH>
   </TINH>
-  <HUANLUYENVIEN>
+  <HLV>
     <MAHLV>HLV14</MAHLV>
-    <TENHLV>nguyen ngoc yssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</TENHLV>
+    <TENHLV>nguyen ngoc y</TENHLV>
     <NGAYSINH>2001-07-11</NGAYSINH>
     <DIACHI>nha</DIACHI>
     <DIENTHOAI>alo</DIENTHOAI>
     <MAQG>QG1</MAQG>
-  </HUANLUYENVIEN>
+  </HLV>
   <SANVD>
     <MASAN>S1</MASAN>
     <TENSAN>S1</TENSAN>
     <DIACHI>S1</DIACHI>
+  </SANVD>
+  <SANVD>
+    <MASAN>2</MASAN>
+    <TENSAN>th</TENSAN>
+    <DIACHI>21</DIACHI>
   </SANVD>
   <HLV_CLB>
     <MAHLV>HLV1</MAHLV>

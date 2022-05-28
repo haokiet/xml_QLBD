@@ -5,7 +5,9 @@
     var grid = new WebGrid(Model, canPage: true, defaultSort: "TENCLB", rowsPerPage: 5);
 }
 
+
 <main id="main" class="main">
+    @Html.ActionLink("Thêm", "Create")
     <h2 style="text-align: center">@ViewBag.Title</h2>
     <div id="gridContent">
         @ViewBag.TB

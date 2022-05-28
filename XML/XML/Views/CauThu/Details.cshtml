@@ -1,0 +1,50 @@
+﻿@model XML.Models.CAUTHU
+
+@{
+    ViewBag.Title = "Thông tin cầu thủ";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<main id="main" class="main">
+    <h2>@ViewBag.Title</h2>
+    <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="10">
+                    <tr>
+                        <td>Họ tên cầu thủ:</td>
+                        <td>@Html.DisplayFor(model => model.HOTEN)</td>
+                    </tr>
+                    <tr>
+                        <td>Vị trí:</td>
+                        <td>@Html.DisplayFor(model => model.VITRI)</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày sinh:</td>
+                        <td>@Html.DisplayFor(model => model.NGAYSINH)</td>
+                    </tr>
+                    <tr>
+                        <td>Câu lạc bộ:</td>
+                        <td>@Html.DisplayFor(model => model.MACLB)</td>
+                    </tr>
+                    <tr>
+                        <td>Số áo:</td>
+                        <td>@Html.DisplayFor(model => model.SO)</td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ:</td>
+                        <td>@Html.DisplayFor(model => model.DIACHI)</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</main>
+
+<p style="margin-left:50px;">
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MACT }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
+
+

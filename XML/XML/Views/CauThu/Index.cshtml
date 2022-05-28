@@ -29,11 +29,8 @@
                         <table class="table datatable">
                             <thead>
                                 <tr>
-                                    <th>Mã cầu thủ</th>
                                     <th>Họ và tên</th>
                                     <th>Vị trí</th>
-                                    <th>Ngày sinh</th>
-                                    <th>Địa chỉ</th>
                                     <th>Tên câu lạc bộ</th>
                                     <th>Tên quốc gia</th>
                                     <th>Số áo</th>
@@ -44,19 +41,10 @@
                                 {
                                     <tr>
                                         <td>
-                                            @item.MACT
-                                        </td>
-                                        <td>
                                             @item.HOTEN
                                         </td>
                                         <td>
                                             @item.VITRI
-                                        </td>
-                                        <td>
-                                            @item.NGAYSINH
-                                        </td>
-                                        <td>
-                                            @item.DIACHI
                                         </td>
                                         <td>
                                             @item.MACLB
@@ -68,7 +56,7 @@
                                             @item.SO
                                         </td>
                                         <td>
-                                            @Html.ActionLink("Chi tiết", "Detail", "CauThu", new { id = item.MACT }, "") |
+                                            @Html.ActionLink("Chi tiết", "Details", "CauThu", new { id = item.MACT }, "") |
                                             @Html.ActionLink("Sửa", "Edit", "CauThu", new { id = item.MACT }, "") |
                                             @Html.ActionLink("Xóa", "Delete", "CauThu", new { id = item.MACT }, "")
                                         </td>

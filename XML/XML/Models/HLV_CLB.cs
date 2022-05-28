@@ -9,8 +9,8 @@ namespace XML.Models
     {
 
         public string VAITRO { get; set; }
-        public virtual CLB CLB { get; set; }
-        public virtual HLV MAHLV { get; set; }
+        public string MACLB { get; set; }
+        public string MAHLV { get; set; }
 
     }
 }

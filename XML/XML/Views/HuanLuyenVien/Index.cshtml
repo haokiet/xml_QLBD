@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<XML.Models.HLV>
 @{
-    ViewBag.Title = "Danh huần luyện viên";
+    ViewBag.Title = "Danh sách huấn luyện viên";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
-    var grid = new WebGrid(Model, canPage: true, defaultSort: "TenNV", rowsPerPage: 5);
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "TENHLV", rowsPerPage: 5);
 }
 
 <main id="main" class="main">
+    @Html.ActionLink("Thêm","Create")
     <h2 style="text-align: center">@ViewBag.Title</h2>
     <div id="gridContent">
         @ViewBag.TB

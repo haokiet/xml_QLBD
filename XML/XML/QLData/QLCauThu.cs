@@ -11,18 +11,18 @@ namespace XML.QLData
     {
         protected override XmlElement createrNewEle(CAUTHU t)
         {
-            XmlElement san = doc.CreateElement("CAUTHU");
+            XmlElement temp = doc.CreateElement("CAUTHU");
 
 
-            san.AppendChild(createrNode<String>("MACT", t.MACT));
-            san.AppendChild(createrNode<String>("HOTEN", t.HOTEN));
-            san.AppendChild(createrNode<String>("VITRI", t.VITRI));
-            san.AppendChild(createrNode<String>("NGAYSINH", t.NGAYSINH));
-            san.AppendChild(createrNode<String>("DIACHI", t.DIACHI));
-            san.AppendChild(createrNode<String>("MACLB", attributeToKey("CAULACBO", "TENCLB", t.MACLB, "MACLB")));
-            san.AppendChild(createrNode<String>("MAQG", attributeToKey("QUOCGIA", "TENQG", t.MAQG, "MAQG")));
-            san.AppendChild(createrNode<String>("SO", t.SO));
-            return san;
+            temp.AppendChild(createrNode<String>("MACT", t.MACT));
+            temp.AppendChild(createrNode<String>("HOTEN", t.HOTEN));
+            temp.AppendChild(createrNode<String>("VITRI", t.VITRI));
+            temp.AppendChild(createrNode<String>("NGAYSINH", t.NGAYSINH));
+            temp.AppendChild(createrNode<String>("DIACHI", t.DIACHI));
+            temp.AppendChild(createrNode<String>("MACLB", attributeToKey("CAULACBO", "TENCLB", t.MACLB, "MACLB")));
+            temp.AppendChild(createrNode<String>("MAQG", attributeToKey("QUOCGIA", "TENQG", t.MAQG, "MAQG")));
+            temp.AppendChild(createrNode<String>("SO", t.SO));
+            return temp;
         }
 
         protected override CAUTHU createrOject(XmlNode item)
@@ -40,12 +40,12 @@ namespace XML.QLData
             return temp;
         }
 
-        protected override string nameData()
+        protected override string nameTable()
         {
             return "CAUTHU";
         }
 
-        protected override string nameKey()
+        protected override string namePrimarykey()
         {
             return "MACT";
         }

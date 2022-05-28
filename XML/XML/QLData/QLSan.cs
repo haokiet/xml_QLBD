@@ -31,12 +31,12 @@ namespace XML.QLData
             return temp;
         }
 
-        protected override string nameData()
+        protected override string nameTable()
         {
             return "SANVD";
         }
 
-        protected override string nameKey()
+        protected override string namePrimarykey()
         {
             return "MASAN";
         }

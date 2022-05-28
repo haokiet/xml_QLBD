@@ -1,48 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
 using XML.Models;
+using XML.QLData;
 
 namespace XML.Controllers
 {
     public class QuocGiaController : Controller
     {
-        XmlDocument doc = new XmlDocument();
-        string file;
-        XmlElement root;
-
-        public string File1 { get => Server.MapPath("/DataSource/XMLFile1.xml"); set => file = value; }
-
-        private void initValue()
-        {
-            doc.Load(File1);
-            root = doc.DocumentElement;
-        }
         // GET: QuocGia
         public ActionResult Index()
         {
-            initValue();
 
-            XmlNodeList QGs = root.SelectNodes("QUOCGIA");
-            List<QG> DSQG = new List<QG>();
+            QLTong<QG> qLQG = new QLQG();
+            qLQG.getdata();
 
-            foreach (XmlNode QG in QGs)
-            {
-                QG temp = new QG();
-                temp.MAQG = QG["MAQG"].InnerText;
-                temp.TENQG = QG["TENQG"].InnerText;
-                DSQG.Add(temp);
-            }
-            return View(DSQG);
+
+            return View(qLQG.DS);
         }
 
         // GET: QuocGia/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(String id)
         {
-            return View();
+            QLTong<QG> t = new QLQG();
+            if (!t.istimkiem(id))
+            {
+                return HttpNotFound();
+            }
+
+            return View(t.xemChiTiet(id));
         }
 
         // GET: QuocGia/Create
@@ -53,12 +43,14 @@ namespace XML.Controllers
 
         // POST: QuocGia/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(QG qG)
         {
+
             try
             {
-                // TODO: Add insert logic here
-
+                QLTong<QG> t = new QLQG();
+                t.them(qG);
+                t.getdata();
                 return RedirectToAction("Index");
             }
             catch
@@ -68,47 +60,43 @@ namespace XML.Controllers
         }
 
         // GET: QuocGia/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            QLTong<QG> t = new QLQG();
+
+            if (!t.istimkiem(id))
+            {
+                return HttpNotFound();
+            }
+
+
+            return View(t.xemChiTiet(id));
         }
 
         // POST: QuocGia/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string id,QG qG)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            QLTong<QG> t = new QLQG();
+            t.sua(id, qG);
+            t.getdata();
+            return RedirectToAction("Index");
         }
 
-        // GET: QuocGia/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
         // POST: QuocGia/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpGet]
+        public ActionResult Delete(string id, QG qG)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            QLTong<QG> t = new QLQG();
+            t.xoa(id);
+            t.getdata();
+            return View("Index", t.DS);
         }
     }
 }
