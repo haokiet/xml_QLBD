@@ -1,0 +1,32 @@
+﻿@model XML.Models.HLV_CLB
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<main id="main" class="main">
+    <h2>@ViewBag.Title</h2>
+    <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="10">
+                    <tr>
+                        <td>Mã Huấn Luyện Viên:</td>
+                        <td>@Html.DisplayFor(model => model.MAHLV)</td>
+                    </tr>
+                    <tr>
+                        <td>Mã Câu lạc Bộ:</td>
+                        <td>@Html.DisplayFor(model => model.MACLB)</td>
+                    </tr>
+                    <tr>
+                        <td>vai trò:</td>
+                        <td>@Html.DisplayFor(model => model.VAITRO)</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</main>
+

@@ -4,17 +4,38 @@
     <xs:element name="QLBD">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="CAUTHU" maxOccurs="unbounded">
+                <xs:element name="TINH" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MACT" minOccurs="1" type="xs:string"/>
-                            <xs:element name="HOTEN" minOccurs="1" type="xs:string"/>
-                            <xs:element name="VITRI" minOccurs="1" type="xs:string"/>
-                            <xs:element name="NGAYSINH" type="xs:date"/>
-                            <xs:element name="DIACHI" type="xs:string"/>
-                            <xs:element name="MACLB" minOccurs="1" type="xs:string"/>
-                            <xs:element name="MAQG" minOccurs="1" type="xs:string"/>
-                            <xs:element name="SO" minOccurs="1" type="xs:int"/>
+                            <xs:element name="MATINH" type="xs:string"/>
+                            <xs:element name="TENTINH" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SANVD">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MASAN">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="5"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="TENSAN">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="DIACHI">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="200"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -36,11 +57,17 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="TINH" maxOccurs="unbounded">
+                <xs:element name="CAUTHU" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="MATINH" type="xs:string"/>
-                            <xs:element name="TENTINH" type="xs:string"/>
+                            <xs:element name="MACT" minOccurs="1" type="xs:string"/>
+                            <xs:element name="HOTEN" minOccurs="1" type="xs:string"/>
+                            <xs:element name="VITRI" minOccurs="1" type="xs:string"/>
+                            <xs:element name="NGAYSINH" type="xs:date"/>
+                            <xs:element name="DIACHI" type="xs:string"/>
+                            <xs:element name="MACLB" minOccurs="1" type="xs:string"/>
+                            <xs:element name="MAQG" minOccurs="1" type="xs:string"/>
+                            <xs:element name="SO" minOccurs="1" type="xs:int"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -77,33 +104,6 @@
                                 </xs:simpleType>
                             </xs:element>
                             <xs:element name="MAQG" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="SANVD">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="MASAN">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:length value="5"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="TENSAN">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:length value="100"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="DIACHI">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:length value="200"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

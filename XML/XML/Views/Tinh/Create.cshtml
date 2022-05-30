@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+<main id="main" class="main">
+    @ViewBag.t
+
+    <form action="/San/Create" method="post">
+        Mã Tỉnh
+        <input type="text" name="MATINH" />
+        <br />
+        Tên Tỉnh
+        <input type="text" name="TENTINH" />
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+    </form>
+    <div>
+        @Html.ActionLink("Quay lại", "Index")
+    </div>
+</main>

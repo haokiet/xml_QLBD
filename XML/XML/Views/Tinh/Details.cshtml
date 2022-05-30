@@ -1,0 +1,34 @@
+﻿@model XML.Models.TINH
+
+@{
+    ViewBag.Title = "Thông tin Tỉnh";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<main id="main" class="main">
+    <h2>@ViewBag.Title</h2>
+    <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="10">
+                    <tr>
+                        <td>Mã Tỉnh:</td>
+                        <td>@Html.DisplayFor(model => model.MATINH)</td>
+                    </tr>
+                    <tr>
+                        <td>Tên Tỉnh:</td>
+                        <td>@Html.DisplayFor(model => model.TENTINH)</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</main>
+
+<p style="margin-left:50px;">
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MATINH }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
+
+

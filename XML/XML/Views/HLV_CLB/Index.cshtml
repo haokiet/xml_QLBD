@@ -1,0 +1,66 @@
+﻿@model IEnumerable<XML.Models.HLV_CLB>
+@{
+    ViewBag.Title = "Danh sách Huấn Luyện Viên_câu lạc bộ";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "MAHLV", rowsPerPage: 5);
+}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Danh sách Huấn luyện viên_câu lạc bộ</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href=#>Home</a></li>
+                <li class="breadcrumb-item">Sân</li>
+                <li class="breadcrumb-item active">Dữ liệu</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        @Html.ActionLink("Thêm", "Create", "HLV_CLB")
+
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>Họ Tên huấn Luyện Viên</th>
+                                    <th>Tên Câu Lạc Bộ</th>
+                                    <th>Vai Trò</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.MAHLV
+                                        </td>
+                                        <td>
+                                            @item.MACLB
+                                        </td>
+                                        <td>
+                                            @item.VAITRO
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Chi tiết", "Details", "HLV_CLB", new { id = item.MAHLV }, "") |
+                                            @Html.ActionLink("Sửa", "Edit", "HLV_CLB", new { id = item.MAHLV }, "") |
+                                            @Html.ActionLink("Xóa", "Delete", "HLV_CLB", new { id = item.MAHLV }, "")
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>

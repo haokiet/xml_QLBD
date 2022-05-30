@@ -1,0 +1,67 @@
+﻿@model IEnumerable<XML.Models.TINH>
+@{
+    ViewBag.Title = "Danh Sách Tỉnh";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "TENTINH", rowsPerPage: 5);
+}
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Danh sách Tỉnh</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href=#>Home</a></li>
+                <li class="breadcrumb-item">Tỉnh</li>
+                <li class="breadcrumb-item active">Dữ liệu</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        @Html.ActionLink("Thêm", "Create", "Tinh")
+                        @ViewBag.t
+
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+
+                                    <th>Mã Tỉnh</th>
+                                    <th>Tên Tỉnh</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.MATINH
+                                        </td>
+                                        <td>
+                                            @item.TENTINH
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Sửa", "Edit", "Tinh", new { id = item.MATINH }, "") |
+                                            @Html.ActionLink("Chi tiết", "Details", "Tinh", new { id = item.MATINH }, "") |
+                                            @Html.ActionLink("Xóa", "Delete", "Tinh", new { id = item.MATINH }, "")
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
