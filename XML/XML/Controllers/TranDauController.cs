@@ -4,29 +4,26 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Xml;
 using XML.Models;
 using XML.QLData;
 
 namespace XML.Controllers
 {
-    public class HLV_CLBController : Controller
+    public class TranDauController : Controller
     {
-        // GET: HLV_CLB
+        // GET: TranDau
         public ActionResult Index()
         {
 
-            QLTong<HLV_CLB> qLHLV_CLB = new QLHLV_CLB();
-            qLHLV_CLB.getdata();
+            QLTong<TRANDAU> qLtran = new QLTran();
+            qLtran.getdata();
 
 
-            return View(qLHLV_CLB.DS);
+            return View(qLtran.DS);
         }
-
-        // GET: HLV_CLB/Details/5
         public ActionResult Details(string id)
         {
-            QLTong<HLV_CLB> t = new QLHLV_CLB();
+            QLTong<TRANDAU> t = new QLTran();
             if (!t.istimkiem(id))
             {
                 return HttpNotFound();
@@ -34,24 +31,22 @@ namespace XML.Controllers
 
             return View(t.xemChiTiet(id));
         }
-
-        // GET: HLV_CLB/Create
         public ActionResult Create()
         {
-            QLTong<HLV_CLB> t = new QLHLV_CLB();
-            ViewBag.MACLB = t.getListSelect("CAULACBO", "TENCLB");
-            ViewBag.MAHLV = t.getListSelect("HLV", "TENHLV");
+            QLTong<TRANDAU> t = new QLTran();
+            ViewBag.MACLB1 = t.getListSelect("CAULACBO", "TENCLB");
+            ViewBag.MACLB2 = t.getListSelect("CAULACBO", "TENCLB");
+            ViewBag.MASAN = t.getListSelect("SANVD", "TENSAN");
             return View();
         }
-
-        // POST: HLV_CLB/Create
         [HttpPost]
-        public ActionResult Create(HLV_CLB hLV_CLB)
+        public ActionResult Create(TRANDAU tRANDAU)
         {
+
             try
             {
-                QLTong<HLV_CLB> t = new QLHLV_CLB();
-                t.them(hLV_CLB);
+                QLTong<TRANDAU> t = new QLTran();
+                t.them(tRANDAU);
                 t.getdata();
                 return RedirectToAction("Index");
             }
@@ -60,8 +55,6 @@ namespace XML.Controllers
                 return View();
             }
         }
-
-        // GET: HLV_CLB/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -69,31 +62,33 @@ namespace XML.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            QLTong<HLV_CLB> t = new QLHLV_CLB();
+            QLTong<TRANDAU> t = new QLTran();
 
             if (!t.istimkiem(id))
             {
                 return HttpNotFound();
             }
 
-            ViewBag.MACLB = t.getListSelect("CAULACBO", "TENCLB");
-            ViewBag.MAHLV = t.getListSelect("HLV", "TENHLV");
+            ViewBag.MACLB1 = t.getListSelect("CAULACBO", "TENCLB");
+            ViewBag.MACLB2 = t.getListSelect("CAULACBO", "TENCLB");
+            ViewBag.MASAN = t.getListSelect("SANVD", "TENSAN");
             return View(t.xemChiTiet(id));
         }
-
-        // POST: HLV_CLB/Edit/5
         [HttpPost]
-        public ActionResult Edit(string id, HLV_CLB hLV_CLB)
+        public ActionResult Edit(string id, TRANDAU tRANDAU)
         {
-            QLTong<HLV_CLB> t = new QLHLV_CLB();
-            t.sua(id, hLV_CLB);
+            QLTong<TRANDAU> t = new QLTran();
+            t.sua(id, tRANDAU);
             t.getdata();
-            return View("Index", t.DS);
+            return RedirectToAction("Index");
         }
+
+
+        // POST: QuocGia/Delete/5
         [HttpGet]
         public ActionResult Delete(string id)
         {
-            QLTong<HLV_CLB> t = new QLHLV_CLB();
+            QLTong<TRANDAU> t = new QLTran();
             t.xoa(id);
             t.getdata();
             return View("Index", t.DS);

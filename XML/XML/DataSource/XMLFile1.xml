@@ -1,33 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <QLBD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QLBD.xsd">
-  <HLV>
-    <MAHLV>12</MAHLV>
-    <TENHLV>t</TENHLV>
-    <NGAYSINH>1</NGAYSINH>
-    <DIACHI>2</DIACHI>
-    <DIENTHOAI>09090</DIENTHOAI>
-    <MAQG>QG2</MAQG>
-  </HLV>
-  <CAUTHU>
-    <MACT>CT1</MACT>
-    <HOTEN>Nguyen tien linh</HOTEN>
-    <VITRI>Tien dao</VITRI>
-    <NGAYSINH>2000-11-01</NGAYSINH>
-    <DIACHI>Nha TRang</DIACHI>
-    <MACLB>CLB1</MACLB>
-    <MAQG>QG1</MAQG>
-    <SO>01</SO>
-  </CAUTHU>
-  <CAUTHU>
-    <MACT>CT4</MACT>
-    <HOTEN>Tien dao</HOTEN>
-    <VITRI>Nguyen tien linh</VITRI>
-    <NGAYSINH>2001-02-11</NGAYSINH>
-    <DIACHI>Nha TRang</DIACHI>
-    <MACLB>CLB1</MACLB>
-    <MAQG>QG2</MAQG>
-    <SO>02</SO>
-  </CAUTHU>
+  <TINH>
+    <MATINH>T1</MATINH>
+    <TENTINH>Tinh 1</TENTINH>
+  </TINH>
+  <SANVD>
+    <MASAN>S1</MASAN>
+    <TENSAN>S1</TENSAN>
+    <DIACHI>S1</DIACHI>
+  </SANVD>
   <QUOCGIA>
     <MAQG>QG1</MAQG>
     <TENQG>Viet Na</TENQG>
@@ -48,10 +29,26 @@
     <MASAN>S1</MASAN>
     <MATINH>T1</MATINH>
   </CAULACBO>
-  <TINH>
-    <MATINH>T1</MATINH>
-    <TENTINH>Tinh 1</TENTINH>
-  </TINH>
+  <CAUTHU>
+    <MACT>CT1</MACT>
+    <HOTEN>Nguyen tien linh</HOTEN>
+    <VITRI>Tien dao</VITRI>
+    <NGAYSINH>2000-11-01</NGAYSINH>
+    <DIACHI>Nha TRang</DIACHI>
+    <MACLB>CLB1</MACLB>
+    <MAQG>QG1</MAQG>
+    <SO>01</SO>
+  </CAUTHU>
+  <CAUTHU>
+    <MACT>CT4</MACT>
+    <HOTEN>Tien dao</HOTEN>
+    <VITRI>Nguyen tien linh</VITRI>
+    <NGAYSINH>2001-02-11</NGAYSINH>
+    <DIACHI>Nha TRang</DIACHI>
+    <MACLB>CLB1</MACLB>
+    <MAQG>QG2</MAQG>
+    <SO>02</SO>
+  </CAUTHU>
   <HLV>
     <MAHLV>HLV14</MAHLV>
     <TENHLV>nguyen ngoc y</TENHLV>
@@ -60,16 +57,14 @@
     <DIENTHOAI>alo</DIENTHOAI>
     <MAQG>QG1</MAQG>
   </HLV>
-  <SANVD>
-    <MASAN>S1</MASAN>
-    <TENSAN>S1</TENSAN>
-    <DIACHI>S1</DIACHI>
-  </SANVD>
-  <SANVD>
-    <MASAN>2</MASAN>
-    <TENSAN>th</TENSAN>
-    <DIACHI>21</DIACHI>
-  </SANVD>
+  <HLV>
+    <MAHLV>12</MAHLV>
+    <TENHLV>t</TENHLV>
+    <NGAYSINH>1</NGAYSINH>
+    <DIACHI>2</DIACHI>
+    <DIENTHOAI>09090</DIENTHOAI>
+    <MAQG>QG2</MAQG>
+  </HLV>
   <HLV_CLB>
     <MAHLV>HLV1</MAHLV>
     <MACLB>CLB1</MACLB>

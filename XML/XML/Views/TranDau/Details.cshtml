@@ -1,0 +1,52 @@
+﻿@model XML.Models.TRANDAU
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<main id="main" class="main">
+    <h2>@ViewBag.Title</h2>
+    <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="10">
+                    <tr>
+                        <td>Mã Trận:</td>
+                        <td>@Html.DisplayFor(model => model.MATRAN)</td>
+                    </tr>
+                    <tr>
+                        <td>Năm:</td>
+                        <td>@Html.DisplayFor(model => model.NAM)</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày Thi Đấu:</td>
+                        <td>@Html.DisplayFor(model => model.NGAYTD)</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày Thi Đấu:</td>
+                        <td>@Html.DisplayFor(model => model.VONG)</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày Thi Đấu:</td>
+                        <td>@Html.DisplayFor(model => model.MACLB1)</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày Thi Đấu:</td>
+                        <td>@Html.DisplayFor(model => model.MACLB2)</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày Thi Đấu:</td>
+                        <td>@Html.DisplayFor(model => model.MASAN)</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày Thi Đấu:</td>
+                        <td>@Html.DisplayFor(model => model.KETQUA)</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</main>
+
