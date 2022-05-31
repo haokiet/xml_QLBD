@@ -33,8 +33,8 @@ namespace XML.QLData
             temp.NAM = item["NAM"].InnerText;
             temp.NGAYTD = item["NGAYTD"].InnerText;
             temp.VONG = item["VONG"].InnerText;
-            temp.MACLB1 = keyToAttribute("CAULACBO", "MACLB", item, "TENCLB");
-            temp.MACLB2 = keyToAttribute("CAULACBO", "MACLB", item, "TENCLB");
+            temp.MACLB1 = keyToAttribute("CAULACBO", "MACLB", item, "TENCLB","1");
+            temp.MACLB2 = keyToAttribute("CAULACBO", "MACLB", item, "TENCLB","2");
             temp.MASAN = keyToAttribute("SANVD", "MASAN", item, "TENSAN");
             temp.KETQUA = item["KETQUA"].InnerText;
             return temp;
