@@ -97,4 +97,16 @@
     <HIEUSO>1</HIEUSO>
     <HANG>1</HANG>
   </BANGXH>
+  <BANGXH>
+    <MACLB>CLB2</MACLB>
+    <NAM>200</NAM>
+    <VONG>1</VONG>
+    <SOTRAN>1</SOTRAN>
+    <THANG>1</THANG>
+    <HOA>0</HOA>
+    <THUA>0</THUA>
+    <DIEM>1</DIEM>
+    <HIEUSO>1</HIEUSO>
+    <HANG>1</HANG>
+  </BANGXH>
 </QLBD>
