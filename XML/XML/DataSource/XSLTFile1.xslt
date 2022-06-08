@@ -6,9 +6,9 @@
 	<xsl:template match="/">
 		<html>
 			<body>
-				<div style="color:red;align-item:center;width: 1000px;margin: 0 auto;">
+				<div style="color:black;align-item:center;margin: 0 auto;">
 					<h1 style="color:red;text-align:center;">BẢNG XẾP HẠNG</h1>
-					<table border="1" style="width: 100%;">
+					<table border="1" style="width: 100%; text-align:center">
 						<tr bgcolor="#9acd32" style="width:200px">
 							<th style="text-align:center">STT</th>
 							<th style="text-align:center;width:120px">Tên Câu Lạc Bộ</th>
@@ -22,7 +22,7 @@
 							<th style="text-align:center">Điểm</th>
 							<th style="text-align:center">Hạng</th>
 						</tr>
-
+					
 						<xsl:for-each select="QLBD/BANGXH">
 							<xsl:variable name="mACLB" select="MACLB"/>
 							<tr>

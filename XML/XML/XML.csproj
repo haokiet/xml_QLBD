@@ -127,9 +127,9 @@
     <Compile Include="Controllers\HuanLuyenVienController.cs" />
     <Compile Include="Controllers\QuocGiaController.cs" />
     <Compile Include="Controllers\SanController.cs" />
+    <Compile Include="Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\TinhController.cs" />
     <Compile Include="Controllers\TranDauController.cs" />
-    <Compile Include="DataSource\ThongKe.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,7 +158,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DataSource\XMLFile1.xml" />
-    <Content Include="DataSource\XSLTFile1.xslt" />
+    <Content Include="DataSource\XSLTFile1.xslt">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -217,6 +219,7 @@
     <Content Include="Views\TranDau\Details.cshtml" />
     <Content Include="Views\TranDau\Create.cshtml" />
     <Content Include="Views\TranDau\Edit.cshtml" />
+    <Content Include="Views\ThongKe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
