@@ -388,5 +388,9 @@
             <xs:selector xpath="SANVD"/>
             <xs:field xpath="TENSAN"/>
         </xs:unique>
+        <xs:keyref name="TRANDAU_REF2" refer="CAULACBO_KEY">
+            <xs:selector xpath="CAULACBO"/>
+            <xs:field xpath="MACLB"/>
+        </xs:keyref>
     </xs:element>
 </xs:schema>
