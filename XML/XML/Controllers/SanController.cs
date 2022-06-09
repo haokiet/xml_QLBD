@@ -80,11 +80,10 @@ namespace XML.Controllers
         {
 
 
-            ViewBag.t = "alo";
-            QLTong<SAN> qLSan = new QLSan();
-            qLSan.sua(id, sanSua);
-            qLSan.getdata();
-            return View("Index", qLSan.DS);
+            QLTong<SAN> t = new QLSan();
+            t.sua(id, sanSua);
+            t.getdata();
+            return RedirectToAction("Index");
         }
 
         // GET: San/Delete/5

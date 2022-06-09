@@ -48,12 +48,6 @@ namespace XML.QLData
                  (@"//" + table + "//" + nameKeyTable + "[contains(normalize-space()," + "'" +
                  item[nameKeyTable].InnerText + "'" + ")]//following-sibling::" + nameAttFind + "//text()").InnerText;
         }
-        public string keyToAttribute(string table, string nameKeyTable, XmlNode item, string nameAttFind,string extend)
-        {
-            return root.SelectSingleNode
-                 (@"//" + table + "//" + nameKeyTable + "[contains(normalize-space()," + "'" +
-                 item[nameKeyTable+extend].InnerText + "'" + ")]//following-sibling::" + nameAttFind + "//text()").InnerText;
-        }
         public string attributeToKey(string table, string nameAttTable, string findValue, string findAtt)
         {
             return root.SelectSingleNode

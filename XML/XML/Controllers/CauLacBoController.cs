@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
@@ -27,13 +28,23 @@ namespace XML.Controllers
         {
 
 
-            return View();
+            QLTong<CLB> qLCLB = new QLCLB();
+            qLCLB.getdata();
+
+
+            return View(qLCLB.DS);
         }
 
         // GET: CauLacBo/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            QLTong<CLB> t = new QLCLB();
+            if (!t.istimkiem(id))
+            {
+                return HttpNotFound();
+            }
+
+            return View(t.xemChiTiet(id));
         }
 
         // GET: CauLacBo/Create
@@ -44,12 +55,13 @@ namespace XML.Controllers
 
         // POST: CauLacBo/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CLB cLB)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                QLTong<CLB> t = new QLCLB();
+                t.them(cLB);
+                t.getdata();
                 return RedirectToAction("Index");
             }
             catch
@@ -59,25 +71,32 @@ namespace XML.Controllers
         }
 
         // GET: CauLacBo/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            QLTong<CLB> t = new QLCLB();
+
+            if (!t.istimkiem(id))
+            {
+                return HttpNotFound();
+            }
+
+
+            return View(t.xemChiTiet(id));
         }
 
         // POST: CauLacBo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string id, CLB cLB)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            QLTong<CLB> t = new QLCLB();
+            t.sua(id, cLB);
+            t.getdata();
+            return RedirectToAction("Index");
         }
 
         // GET: CauLacBo/Delete/5
@@ -88,18 +107,12 @@ namespace XML.Controllers
 
         // POST: CauLacBo/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(string id, CLB cLB)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            QLTong<CLB> t = new QLCLB();
+            t.xoa(id);
+            t.getdata();
+            return View("Index", t.DS);
         }
     }
 }

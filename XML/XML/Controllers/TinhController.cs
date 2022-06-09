@@ -48,12 +48,17 @@ namespace XML.Controllers
         public ActionResult Create(TINH tinhMoi)
         {
 
-            ViewBag.t = "thanh cong";
-            QLTong<TINH> qLTinh = new QLTinh();
-            qLTinh.them(tinhMoi);
-            qLTinh.getdata();
-
-            return View("Index", qLTinh.DS);
+            try
+            {
+                QLTong<TINH> t = new QLTinh();
+                t.them(tinhMoi);
+                t.getdata();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
 
 
         }

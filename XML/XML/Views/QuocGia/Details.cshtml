@@ -1,0 +1,28 @@
+﻿@model XML.Models.QG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<main id="main" class="main">
+    <h2>@ViewBag.Title</h2>
+    <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="10">
+                    <tr>
+                        <td>Họ tên huấn luyện viên:</td>
+                        <td>@Html.DisplayFor(model => model.MAQG)</td>
+                    </tr>
+                    <tr>
+                        <td>Họ tên huấn luyện viên:</td>
+                        <td>@Html.DisplayFor(model => model.TENQG)</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    @Html.ActionLink("Quay lại", "Index")
+</main>
+

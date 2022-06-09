@@ -4,14 +4,23 @@
     <MATINH>T1</MATINH>
     <TENTINH>Tinh 1</TENTINH>
   </TINH>
+  <TINH>
+  <MATINH>T2</MATINH>
+  <TENTINH>Tinh 2</TENTINH>
+  </TINH>
   <SANVD>
-    <MASAN>San01</MASAN>
-    <TENSAN>Hoàng Anh</TENSAN>
-    <DIACHI>S1</DIACHI>
+    <MASAN>S1</MASAN>
+    <TENSAN>SAN 1</TENSAN>
+    <DIACHI>NHA TRANG</DIACHI>
+  </SANVD>
+  <SANVD>
+    <MASAN>S2</MASAN>
+    <TENSAN>SAN 2</TENSAN>
+    <DIACHI>PHÚ YÊN</DIACHI>
   </SANVD>
   <QUOCGIA>
     <MAQG>QG1</MAQG>
-    <TENQG>Viet Na</TENQG>
+    <TENQG>Viet Nam</TENQG>
   </QUOCGIA>
   <QUOCGIA>
     <MAQG>QG2</MAQG>
@@ -71,8 +80,10 @@
     <VAITRO>chiu</VAITRO>
   </HLV_CLB>
   <HLV_CLB>
-    <MAHLV></MAHLV>
-    <MACLB></MACLB>
+    <MAHLV>
+    </MAHLV>
+    <MACLB>
+    </MACLB>
     <VAITRO>KHONG KHI</VAITRO>
   </HLV_CLB>
   <TRANDAU>
